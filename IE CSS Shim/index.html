@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html>
+<head>
+<!--[if IE]>
+<script src="csslimitationshim.js"></script>
+<![endif]-->
+
+<style id="css00">span {color: white; background-color: black;} .byline {font-style: italic;} #div00 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css01">#div01 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css02">#div02 {color: DarkGray;} #div02 {background-color:LightGray;}</style>
+<style id="css03">#div03 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css04">#div04 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css05">#div05 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css06">#div06 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css07">#div07 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css08">#div08 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css09">#div09 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css10">#div10 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css11">#div11 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css12">#div12 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css13">#div13 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css14">#div14 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css15">#div15 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css16">#div16 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css17">#div17 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css18">#div18 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css19">#div19 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css20">#div20 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css21">#div21 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css22">#div22 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css23">#div23 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css24">#div24 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css25">#div25 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css26">#div26 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css27">#div27 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css28">#div28 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css29">#div29 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css30">#div30 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css31">#div31 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css32">#div32 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css33">#div33 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css34">#div34 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css35">#div35 {color: DarkGray;} #div35 {background-color:LightGray;}</style>
+<style id="css36">#div36 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css37">#div37 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css38">#div38 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css39">#div39 {color: DarkGray; background-color:LightGray;}</style>
+</head>
+<body onload="cssshim()">
+<h1>IE CSS Limitation Shim</h1>
+<h2>A proof-of-concept</h2>
+<p class="byline">by Kenneth Heutmaker</p>
+<h3>Links</h3>
+<ul>
+<li><a href="http://support.microsoft.com/kb/262161">MSDN Knowledge Base</a></li>
+<li><a href="http://blogs.msdn.com/b/ieinternals/archive/2011/05/14/internet-explorer-stylesheet-rule-selector-import-sheet-limit-maximum.aspx">EricLaw's Blog</a>
+</ul>
+<h3>TODO:</h3>
+<ul>
+<li>Add detection for &lt;link&gt; tags and process them correctly</li>
+<li>Support for IE Conditional Comments</li>
+<li>Support @import and @media</li>
+<li>Confirm that reorganization of rules doesn't overflow the rule limits</li>
+<li>Add browser detection so that this javascript doesn't throw an error in Firefox</li>
+<li>It probably make more sense to parse the CSS with a tokenizer instead of regular expressions</li>
+</ul>
+<h3>Test Section</h3>
+<span id="div00">00</span>
+<span id="div01">01</span>
+<span id="div02">02</span>
+<span id="div03">03</span>
+<span id="div04">04</span>
+<span id="div05">05</span>
+<span id="div06">06</span>
+<span id="div07">07</span>
+<span id="div08">08</span>
+<span id="div09">09</span>
+<span id="div10">10</span>
+<span id="div11">11</span>
+<span id="div12">12</span>
+<span id="div13">13</span>
+<span id="div14">14</span>
+<span id="div15">15</span>
+<span id="div16">16</span>
+<span id="div17">17</span>
+<span id="div18">18</span>
+<span id="div19">19</span>
+<span id="div20">20</span>
+<span id="div21">21</span>
+<span id="div22">22</span>
+<span id="div23">23</span>
+<span id="div24">24</span>
+<span id="div25">25</span>
+<span id="div26">26</span>
+<span id="div27">27</span>
+<span id="div28">28</span>
+<span id="div29">29</span>
+<span id="div30">30</span>
+<span id="div31">31</span>
+<span id="div32">32</span>
+<span id="div33">33</span>
+<span id="div34">34</span>
+<span id="div35">35</span>
+<span id="div36">36</span>
+<span id="div37">37</span>
+<span id="div38">38</span>
+<span id="div39">39</span>
+</body>
+</html>
