@@ -1,11 +1,21 @@
 <!doctype html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <!--[if IE]>
 <script src="iestylesheetlimitshim.js"></script>
 <![endif]-->
+<script>
+function enableButtonForIe() {
+	if (!!navigator.userAgent.match(/MSIE/)) {
+		var els = document.getElementsByTagName("button");
+		for (var i=0, iMax=els.length; i<iMax; i++)
+			els[i].disabled=false;
+	}
+}
+</script>
 
-<style id="css00">span {color: white; background-color: black;} .byline {font-style: italic;} #div00 {color: DarkGray; background-color:LightGray;}</style>
+<style id="css00">span {color: white; background-color: black;} .byline, .disclaimer {font-style: italic;} button {margin: 10px 0;} #div00 {color: DarkGray; background-color:LightGray;}</style>
 <style id="css01">#div01 {color: DarkGray; background-color:LightGray;}</style>
 <style id="css02">#div02 {color: DarkGray;} #div02 {background-color:LightGray;}</style>
 <style id="css03">#div03 {color: DarkGray; background-color:LightGray;}</style>
@@ -46,11 +56,18 @@
 <style id="css38">#div38 {color: DarkGray; background-color:LightGray;}</style>
 <style id="css39">#div39 {color: DarkGray; background-color:LightGray;}</style>
 </head>
-<body onload="cssshim()">
-<h1>IE CSS Limitation Shim</h1>
+<body onload="enableButtonForIe()">
+<h1>IE CSS Limit Buster Shim</h1>
 <h2>A proof-of-concept</h2>
 <p class="byline">by Kenneth Heutmaker</p>
-<p>PoC that move style rules from one style tag to another. The purpose is to overcome the stylesheet limit imposed by IE9 or lower.</p>
+<p class="disclaimer">NOTE: This technique is unproven and the javascript shim is only half-baked and probably won't work on your site. Use it at your own risk.</p>
+<p>PoC that implements client side bundling of stylesheets to overcome the style sheet limitations imposed by IE9 and lower. It works by detecting
+stylesheets in the DOM and moving the contents to an existing stylesheet object.</p>
+<p>This page has 40 &lt;style&gt; tags on the page. Each one has styles that apply to &lt;span&gt;s in the <a href="#test-section">Test Section</a> below.
+If you are viewing this page in IE9 or lower, spans 00-30 have a light gray background with dark gray letters. Spans 31-39 have a black background with
+white letters.</p>
+<p>To run the shim, click the button in the <a href="#test-section">Test Section</a>. All of the CSS rules specified in all of the &lt;style&gt; tags will be moved to the first
+stylesheet object and will be applied to the DOM. All of the spans will turn to gray-on-gray.</p>
 <h3>Links</h3>
 <ul>
 <li><a href="http://support.microsoft.com/kb/262161">MSDN Knowledge Base</a></li>
@@ -61,12 +78,15 @@
 <ul>
 <li>Add detection for &lt;link&gt; tags and process them correctly</li>
 <li>Support for IE Conditional Comments</li>
-<li>Support @import and @media</li>
+<li>Support nested CSS (i.e. @import and @media)</li>
 <li>Confirm that reorganization of rules doesn't overflow the rule limits</li>
 <li>Add browser detection so that this javascript doesn't throw an error in Firefox</li>
 <li>It probably make more sense to parse the CSS with a tokenizer instead of regular expressions</li>
 </ul>
-<h3>Test Section</h3>
+<a name=test-section><h3>Test Section</h3></a>
+<p>This test can only be run in IE</p>
+<button disabled="disabled" onclick="cssshim()">Run the test</button>
+<button disabled="disabled" onclick="window.location.reload()">Reload the page</button>
 <div id="tests">
 <span id="div00">00</span>
 <span id="div01">01</span>
